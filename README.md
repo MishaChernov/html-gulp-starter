@@ -1,4 +1,4 @@
-- [ ] One structure of directories
+- [X] One structure of directories
 - [ ] GULP: Build styles 
 - [ ] GULP: Image optimizer
 - [ ] GULP: Git reploy to github.io
