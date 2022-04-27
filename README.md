@@ -1,1 +1,14 @@
-# html-starter
+- [ ] One structure of directories
+- [ ] GULP: Build styles 
+- [ ] GULP: Image optimizer
+- [ ] GULP: Git reploy to github.io
+- [ ] GULP: JS task. es6 transpiler
+- [ ] GULP: Loging. Display size of the project
+- [ ] GULP: Live reload
+- [ ] Linting: CSS,JS,HTML,W3C
+- [ ] Readme file generator
+- [ ] Precommit git hooks
+- [ ] Unit tests (Optional)
+- [ ] Create initial files like: variables, constants, fonts, mixins (media breakpoints), normilize, etc
+- [ ] A responsive, mobile-firs concept
+- [ ] Add HTML/CSS docs generator
