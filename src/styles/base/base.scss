@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: $max-container-width;
+}
+
+.section {
+    margin-bottom: $section-margin-bottom;
+
+    &--no-margin {
+        margin-bottom: 0;
+    }
+}
+
+.footer {
+    margin-top: auto;
+}

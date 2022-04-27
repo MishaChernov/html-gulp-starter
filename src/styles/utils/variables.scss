@@ -1,0 +1,23 @@
+$max-container-width: 1200px;
+$section-margin-bottom: 40px;
+
+//Uses for SCSC mixin mq($from: mobile)
+$breakpoints: (
+    'phone': 375px,
+    'phone-wide': 480px,
+    'phablet': 560px,
+    'tablet-small': 640px,
+    'tablet': 768px,
+    'tablet-wide': 1024px,
+    'desktop': 1248px,
+    'desktop-wide': 1440px,
+);
+
+//Uses for SCSC function z($name)
+$z-indexes: (
+    'outdated-browser',
+    'modal',
+    'site-header',
+    'page-wrapper',
+    'site-footer'
+);

@@ -1,0 +1,161 @@
+/*
+	Media Query mixin
+	See https://github.com/sass-mq/sass-mq/ for original full version.
+	@example scss
+	 .element {
+	   @include mq($from: mobile) {
+		 color: red;
+	   }
+	   @include mq($to: tablet) {
+		 color: blue;
+	   }
+	   @include mq(mobile, tablet) {
+		 color: green;
+	   }
+	   @include mq($from: tablet, $and: '(orientation: landscape)') {
+		 color: teal;
+	   }
+	   @include mq(em(950px)) {
+		 color: hotpink;
+	   }
+	   @include mq(em(950px), $media-feature: height) {
+		 color: hotpink;
+	   }
+	   @include mq(tablet, $media-type: screen) {
+		 color: hotpink;
+	   }
+	   // Advanced use:
+	   $custom-breakpoints: (L: 900px, XL: 1200px);
+	   @include mq(L, $bp: $custom-breakpoints) {
+		 color: hotpink;
+	   }
+	 }
+*/
+
+@mixin mq(
+    $from: false,
+    $to: false,
+    $and: false,
+    $media-feature: width,
+    $media-type: all,
+    $bp: $breakpoints
+) {
+    $min-width: 0;
+    $max-width: 0;
+    $media-query: '';
+
+    // From: this breakpoint (inclusive)
+    @if $from {
+        @if type-of($from) == number {
+            $min-width: $from;
+        } @else {
+            $min-width: map_get($bp, $from);
+        }
+    }
+
+    // Until: that breakpoint (exclusive)
+    @if $to {
+        @if type-of($to) == number {
+            $max-width: $to;
+        } @else {
+            $negative: if($em-media-queries, 0.01em, 1px);
+            $max-width: map_get($bp, $to) - $negative;
+        }
+    }
+
+    @if $media-feature {
+        @if $min-width != 0 {
+            $media-query: '#{$media-query} and (min-#{$media-feature}: #{$min-width})';
+        }
+        @if $max-width != 0 {
+            $media-query: '#{$media-query} and (max-#{$media-feature}: #{$max-width})';
+        }
+    }
+
+    @if $and {
+        $media-query: '#{$media-query} and #{$and}';
+    }
+
+    // Remove unnecessary media query prefix 'all and '
+    @if ($media-type == 'all' and $media-query != '') {
+        $media-type: '';
+        $media-query: str-slice(unquote($media-query), 6);
+    }
+
+    @media #{$media-type + $media-query} {
+        @content;
+    }
+}
+
+/*
+
+	Retina images
+
+	example:
+
+	.element {
+		@include retina {
+			background-image: url(../img/background@2x.png);
+		}
+	}
+
+*/
+@mixin retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-moz-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3 / 2),
+        only screen and (min-device-pixel-ratio: 1.5),
+        only screen and (min-resolution: 1.5dppx) {
+        @content;
+    }
+}
+
+// Hide only visually, but have it available for screenreaders
+@mixin visually-hidden($focusable: false) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// Contain floats / clearfix
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+/*
+  To quickly centre a block element without having to worry about 
+  if there is any top or bottom margin already applied.
+*/
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+/*
+  When using ::before and ::after you'll always need these three,
+  so we're saving two lines of code every time you use this.
+  See below an example of using it without any arguments 
+  (You will also see this mixin used in some of our other mixins below too).
+  
+  div::after {
+    @include pseudo;
+    top: -1rem; left: -1rem;
+    width: 1rem; height: 1rem;
+  }
+*/
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
