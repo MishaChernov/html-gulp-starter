@@ -33,58 +33,58 @@
 */
 
 @mixin mq(
-    $from: false,
-    $to: false,
-    $and: false,
-    $media-feature: width,
-    $media-type: all,
-    $bp: $breakpoints
+  $from: false,
+  $to: false,
+  $and: false,
+  $media-feature: width,
+  $media-type: all,
+  $bp: $breakpoints
 ) {
-    $min-width: 0;
-    $max-width: 0;
-    $media-query: '';
+  $min-width: 0;
+  $max-width: 0;
+  $media-query: '';
 
-    // From: this breakpoint (inclusive)
-    @if $from {
-        @if type-of($from) == number {
-            $min-width: $from;
-        } @else {
-            $min-width: map_get($bp, $from);
-        }
+  // From: this breakpoint (inclusive)
+  @if $from {
+    @if type-of($from) == number {
+      $min-width: $from;
+    } @else {
+      $min-width: map_get($bp, $from);
     }
+  }
 
-    // Until: that breakpoint (exclusive)
-    @if $to {
-        @if type-of($to) == number {
-            $max-width: $to;
-        } @else {
-            $negative: if($em-media-queries, 0.01em, 1px);
-            $max-width: map_get($bp, $to) - $negative;
-        }
+  // Until: that breakpoint (exclusive)
+  @if $to {
+    @if type-of($to) == number {
+      $max-width: $to;
+    } @else {
+      $negative: if($em-media-queries, 0.01em, 1px);
+      $max-width: map_get($bp, $to) - $negative;
     }
+  }
 
-    @if $media-feature {
-        @if $min-width != 0 {
-            $media-query: '#{$media-query} and (min-#{$media-feature}: #{$min-width})';
-        }
-        @if $max-width != 0 {
-            $media-query: '#{$media-query} and (max-#{$media-feature}: #{$max-width})';
-        }
+  @if $media-feature {
+    @if $min-width != 0 {
+      $media-query: '#{$media-query} and (min-#{$media-feature}: #{$min-width})';
     }
+    @if $max-width != 0 {
+      $media-query: '#{$media-query} and (max-#{$media-feature}: #{$max-width})';
+    }
+  }
 
-    @if $and {
-        $media-query: '#{$media-query} and #{$and}';
-    }
+  @if $and {
+    $media-query: '#{$media-query} and #{$and}';
+  }
 
-    // Remove unnecessary media query prefix 'all and '
-    @if ($media-type == 'all' and $media-query != '') {
-        $media-type: '';
-        $media-query: str-slice(unquote($media-query), 6);
-    }
+  // Remove unnecessary media query prefix 'all and '
+  @if ($media-type == 'all' and $media-query != '') {
+    $media-type: '';
+    $media-query: str-slice(unquote($media-query), 6);
+  }
 
-    @media #{$media-type + $media-query} {
-        @content;
-    }
+  @media #{$media-type + $media-query} {
+    @content;
+  }
 }
 
 /*
@@ -101,34 +101,34 @@
 
 */
 @mixin retina {
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-        only screen and (-moz-min-device-pixel-ratio: 1.5),
-        only screen and (-o-min-device-pixel-ratio: 3 / 2),
-        only screen and (min-device-pixel-ratio: 1.5),
-        only screen and (min-resolution: 1.5dppx) {
-        @content;
-    }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3 / 2),
+    only screen and (min-device-pixel-ratio: 1.5),
+    only screen and (min-resolution: 1.5dppx) {
+    @content;
+  }
 }
 
 // Hide only visually, but have it available for screenreaders
 @mixin visually-hidden($focusable: false) {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 // Contain floats / clearfix
 @mixin clearfix {
-    &::after {
-        content: '';
-        display: table;
-        clear: both;
-    }
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
 }
 
 /*
@@ -136,10 +136,10 @@
   if there is any top or bottom margin already applied.
 */
 @mixin push--auto {
-    margin: {
-        left: auto;
-        right: auto;
-    }
+  margin: {
+    left: auto;
+    right: auto;
+  }
 }
 
 /*
@@ -155,7 +155,7 @@
   }
 */
 @mixin pseudo($display: block, $pos: absolute, $content: '') {
-    content: $content;
-    display: $display;
-    position: $pos;
+  content: $content;
+  display: $display;
+  position: $pos;
 }

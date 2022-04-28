@@ -1,22 +1,23 @@
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('../img/view.jpg');
 }
 
 .container {
-    margin: 0 auto;
-    max-width: $max-container-width;
+  margin: 0 auto;
+  max-width: $max-container-width;
 }
 
 .section {
-    margin-bottom: $section-margin-bottom;
+  margin-bottom: $section-margin-bottom;
 
-    &--no-margin {
-        margin-bottom: 0;
-    }
+  &--no-margin {
+    margin-bottom: 0;
+  }
 }
 
 .footer {
-    margin-top: auto;
+  margin-top: auto;
 }

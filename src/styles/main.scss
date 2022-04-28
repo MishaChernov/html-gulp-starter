@@ -1,9 +1,9 @@
-@import 'utils/variables';
-@import 'utils/functions';
-@import 'utils/mixins';
+@import './utils/variables';
+@import './utils/functions';
+@import './utils/mixins';
 
-@import 'base/normilize';
-@import 'base/fonts';
-@import 'base/base';
+@import './base/normilize';
+@import './base/fonts';
+@import './base/base';
 
-@import 'components/button';
+@import './components/button';
