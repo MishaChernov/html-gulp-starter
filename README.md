@@ -1,18 +1,3 @@
-- [x] One structure of directories
-- [X] GULP: Build styles
-- [X] GULP: Image optimizer
-- [X] GULP: Git deploy to github.io
-- [ ] GULP: JS task. es6 transpiler
-- [X] GULP: Loging. Display size of the project
-- [X] GULP: Live reload
-- [X] Linting: CSS,JS,HTML,W3C
-- [ ] Readme file generator
-- [ ] Precommit git hooks
-- [ ] Unit tests (Optional)
-- [X] Create initial files like: variables, constants, fonts, mixins (media breakpoints), normilize, etc
-- [X] A responsive, mobile-firs concept
-- [ ] Add HTML/CSS docs generator
-
 ## Directory structure
 
 ```
@@ -52,3 +37,18 @@
             └── variables.scss
 
 ```
+
+- [x] One structure of directories
+- [X] GULP: Build styles
+- [X] GULP: Image optimizer
+- [X] GULP: Git deploy to github.io
+- [ ] GULP: JS task. es6 transpiler
+- [X] GULP: Loging. Display size of the project
+- [X] GULP: Live reload
+- [X] Linting: CSS,JS,HTML,W3C
+- [ ] Readme file generator
+- [ ] Precommit git hooks
+- [ ] Unit tests (Optional)
+- [X] Create initial files like: variables, constants, fonts, mixins (media breakpoints), normilize, etc
+- [X] A responsive, mobile-firs concept
+- [ ] Add HTML/CSS docs generator
