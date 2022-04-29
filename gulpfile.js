@@ -11,16 +11,13 @@ const browserSync = require('browser-sync').create();
 const notify = require('gulp-notify');
 const minify = require('gulp-csso');
 const multipipe = require('multipipe');
-const ghPages = require('gulp-gh-pages');
 const rename = require('gulp-rename');
 const gulpStylelint = require('gulp-stylelint');
 const compress_images = require('compress-images');
-const gitUserName = require('git-username');
-const gitRepoName = require('git-repo-name');
 
 gulp.task('styles', function () {
   return multipipe(
-    gulp.src('src/styles/main.scss'),
+    gulp.src('src/styles/*.scss'),
     sass().on('error', sass.logError),
     postcss([
       autoprefixer(),
@@ -144,24 +141,10 @@ gulp.task('watch', function () {
 
   gulp.watch('src/js/*.js', gulp.series('min-js'));
 
-  gulp.watch('src/styles/*', gulp.series('styles', 'lint-css'));
+  gulp.watch('src/styles/**/*.*', gulp.series('styles', 'lint-css'));
 
   gulp.watch('src/img/**/*.*', gulp.series('images'));
 });
-
-// gulp.task('deploy', function () {
-//   const userName = gitUserName();
-//   const repoName = gitRepoName.sync();
-
-//   return multipipe(
-//     gulp.src('./build/**/*.*'),
-//     rename(repoName),
-//     ghPages({
-//       remoteUrl: `https://github.com/${userName}/${userName}.github.io`,
-//       branch: 'master',
-//     })
-//   );
-// });
 
 gulp.task('serve', function () {
   browserSync.init({

@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "img-compress": "gulp img-compress",
     "start": "gulp dev",
-    "deploy": "gulp deploy"
+    "deploy": "git add build && git commit -m 'update' && git subtree push --prefix build origin gh-pages"
   },
   "repository": {
     "type": "git",
@@ -30,9 +30,6 @@
     "compress-images": "^2.0.5",
     "css-mqpacker": "^7.0.0",
     "del": "^6.0.0",
-    "git-repo-name": "^1.0.1",
-    "git-user-name": "^2.0.0",
-    "git-username": "^1.0.0",
     "gulp": "^4.0.2",
     "gulp-cheerio": "^1.0.0",
     "gulp-csso": "^4.0.1",
