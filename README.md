@@ -54,7 +54,8 @@ To set up a convenient dev environment run this at the root of mnml
 
 ## Another very usefull commands
 * ```npm run img-compress``` - Will compress size of all your images
-<p align="center"><img width="609" alt="Screenshot 2022-04-30 at 01 06 33" src="https://user-images.githubusercontent.com/26045884/166079117-373fa385-5939-4caf-b705-94b58bc85d0d.png"></p>
+<p align="left"><img width="595" alt="Screenshot 2022-04-30 at 01 15 58" src="https://user-images.githubusercontent.com/26045884/166079755-e53efb53-3dac-48c8-a851-a973ffe4c716.png"></p>
+
 
 * ```npm run deploy``` - Will deploy your site to github pages, e.g yourGitHubName/github.io/yourNewRepoName
 
