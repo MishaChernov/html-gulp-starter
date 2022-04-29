@@ -1,7 +1,7 @@
 - [x] One structure of directories
 - [X] GULP: Build styles
 - [X] GULP: Image optimizer
-- [ ] GULP: Git deploy to github.io
+- [X] GULP: Git deploy to github.io
 - [ ] GULP: JS task. es6 transpiler
 - [X] GULP: Loging. Display size of the project
 - [X] GULP: Live reload
