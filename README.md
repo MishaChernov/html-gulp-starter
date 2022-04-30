@@ -26,7 +26,7 @@ Uses browser-sync to create a livereloading server for rapidly prototyping sites
 ```https
     git clone https://github.com/MishaChernov/html-gulp-starter.git yourNewRepoName
 ```
-
+or
 ```ssh
     git@github.com:MishaChernov/html-gulp-starter.git yourNewRepoName
 ```
