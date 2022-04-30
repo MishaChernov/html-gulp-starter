@@ -40,7 +40,7 @@ Then
     git remote add origin git@github.com:yourUserName/yourNewRepoName.git
 ``` 
 
-* git remote -v will allow you to check that you have changed the remote origin correctly. The output should look like:
+* ```git remote -v``` will allow you to check that you have changed the remote origin correctly. The output should look like:
 ```bash
     origin git@github.com:yourUserName/yourNewRepoName.git (fetch)
     origin git@github.com:yourUserName/yourNewRepoName.git (push)
@@ -50,7 +50,7 @@ Then
 To set up a convenient dev environment run this at the root of mnml
 
 * ```npm install``` - Install node modules to your project
-* ```yarn start```  - Start coding ;)
+* ```npm start```  - Start coding ;)
 
 ## Another very usefull commands
 * ```npm run img-compress``` - Will compress size of all your images
