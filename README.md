@@ -14,7 +14,7 @@ Uses browser-sync to create a livereloading server for rapidly prototyping sites
 * Browser reload on filesave using browser-sync
 * Local server for serving a static site
 * Images compression
-* Deplpying your site to github pages
+* Deploying your site to github pages
 
 ## Getting started
 
