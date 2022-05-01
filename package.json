@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "img-compress": "gulp img-compress",
     "start": "gulp dev",
-    "deploy": "git add build && git commit -m 'update' && git subtree push --prefix build origin gh-pages"
+    "deploy": "git add build && git commit -m 'update' && gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -52,5 +52,8 @@
     "stylelint": "^14.8.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3"
   }
 }

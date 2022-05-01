@@ -64,6 +64,10 @@ gulp.task('images', function () {
   return gulp.src('src/img/*').pipe(gulp.dest('build/img'));
 });
 
+gulp.task('fonts', function () {
+  return gulp.src('src/fonts/*').pipe(gulp.dest('build/fonts'));
+});
+
 gulp.task('img-compress', async function () {
   return await compress_images(
     'src/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}',
@@ -132,7 +136,8 @@ gulp.task(
   gulp.series(
     'clean',
     gulp.parallel('html', 'lint-css', 'styles', 'min-js'),
-    'images'
+    'images',
+    'fonts'
   )
 );
 
