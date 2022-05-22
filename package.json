@@ -6,8 +6,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "img-compress": "gulp img-compress",
     "start": "gulp dev",
-    "deploy": "git add build && git commit -m 'update' && gh-pages -d build"
+    "deploy": "git add build && git commit -m 'update' && gh-pages -d build",
+    "gh-deploy": "echo \"running deploy to gh-pages...\" && gh-pages -d build"
   },
+  "pre-push": [
+    "gh-deploy"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MishaChernov/html-starter.git"
@@ -48,6 +52,7 @@
     "node-sass": "^7.0.1",
     "pngquant-bin": "^6.0.1",
     "postcss-scss": "^4.0.4",
+    "pre-push": "^0.1.2",
     "sass": "^1.51.0",
     "stylelint": "^14.8.0",
     "stylelint-config-prettier": "^9.0.3",
