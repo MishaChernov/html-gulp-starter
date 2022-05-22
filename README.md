@@ -14,7 +14,7 @@ Uses browser-sync to create a livereloading server for rapidly prototyping sites
 * Browser reload on filesave using browser-sync
 * Local server for serving a static site
 * Images compression
-* Deploying your site to github pages
+* Automaticly deploying to GitHub pages on every "git push"
 
 ## Getting started
 
@@ -57,8 +57,7 @@ To set up a convenient dev environment run this at the root of mnml
 <p align="left"><img width="595" alt="Screenshot 2022-04-30 at 01 15 58" src="https://user-images.githubusercontent.com/26045884/166079755-e53efb53-3dac-48c8-a851-a973ffe4c716.png"></p>
 
 
-* ```npm run deploy``` - Will deploy your site to github pages, e.g yourGitHubName/github.io/yourNewRepoName
-
+* ```npm run deploy``` - Will deploy your site to github pages, e.g yourGitHubName/github.io/yourNewRepoName. But this is unnessesary because it will automatically pushes your build folder each time you do git push to your repository
 
 ## Directory structure
 
