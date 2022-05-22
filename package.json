@@ -7,7 +7,7 @@
     "img-compress": "gulp img-compress",
     "start": "gulp dev",
     "deploy": "git add build && git commit -m 'update' && gh-pages -d build",
-    "gh-deploy": "echo \"running deploy to gh-pages...\" && gh-pages -d build"
+    "gh-deploy": "echo \"Running deploy to gh-pages...\" && gh-pages -d build"
   },
   "pre-push": [
     "gh-deploy"
