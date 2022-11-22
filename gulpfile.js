@@ -12,7 +12,7 @@ const notify = require('gulp-notify');
 const minify = require('gulp-csso');
 const multipipe = require('multipipe');
 const rename = require('gulp-rename');
-const gulpStylelint = require('gulp-stylelint');
+const gulpStylelint = require('@ronilaukkarinen/gulp-stylelint');
 const compress_images = require('compress-images');
 
 gulp.task('styles', function () {
